@@ -1,0 +1,12 @@
+#eventsContainer {
+  height: 100vh;
+  width: 100%;
+}
+#eventsContainer .sectionsEvents {
+  height: 95%;
+}
+#eventsContainer .sectionEvents1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

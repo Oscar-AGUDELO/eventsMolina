@@ -1,36 +1,48 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+/* eslint-disable no-restricted-globals */
+import React, { useContext } from "react";
+import Nav from "@components/Nav";
+import api from "@services/api";
+import { useNavigate } from "react-router-dom";
+import image1 from "@assets/image1.jpg";
+import PagesContext from "../PagesContexts";
+import "./home.css";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const { setSelectedEvent } = useContext(PagesContext);
+  const goToSelectEvent = () => {
+    api.get("/api/events", { withCredentials: true }).then((res) => {
+      setSelectedEvent(res.data[res.data.length - 1]);
+      localStorage.setItem(
+        "selectedEvent",
+        JSON.stringify(res.data[res.data.length - 1])
+      );
+    });
+    setTimeout(() => {
+      navigate("/event");
+    }, 500);
+  };
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div id="homeContainer">
+      <Nav />
+      <main className="sectionsHome">
+        <section className="sectionHome1">
+          <img className="imgHome" src={image1} alt="logo" />
+          <p className="descriptionHome">
+            Un momento musical de adoración y exaltación a Dios. Un espacio de
+            encuentro e integración de jóvenes
+          </p>
+        </section>
+        <section className="sectionHome2">
+          <button
+            type="button"
+            className="buttonNextEdition"
+            onClick={goToSelectEvent}
+          >
+            PRÓXIMA EDICIÓN
+          </button>
+        </section>
+      </main>
+    </div>
   );
 }

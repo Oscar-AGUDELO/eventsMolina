@@ -1,0 +1,13 @@
+#selectEventContainer {
+  height: 100vh;
+  width: 100%;
+}
+#selectEventContainer .sectionsSelectEvent {
+  height: 95%;
+}
+#selectEventContainer .sectionSelectEvent1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

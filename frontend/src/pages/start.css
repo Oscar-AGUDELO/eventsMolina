@@ -1,0 +1,25 @@
+#start {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#start .buttonStartContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+#start .buttonStart {
+  background-color: var(--color-1);
+  border-radius: 15px;
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--color-1);
+  transition: var(--transition);
+}
+#start .buttonStart:hover {
+  border: 2px solid var(--color-2);
+}

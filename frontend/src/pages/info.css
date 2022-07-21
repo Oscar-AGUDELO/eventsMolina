@@ -1,0 +1,13 @@
+#infoContainer {
+  height: 100vh;
+  width: 100%;
+}
+#infoContainer .sectionsInfo {
+  height: 95%;
+}
+#infoContainer .sectionInfo1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
