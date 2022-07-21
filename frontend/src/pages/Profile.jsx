@@ -128,22 +128,19 @@ export default function Profile() {
   const [myEvents, setMyEvents] = useState([]);
   useEffect(() => {
     api
-      .get("/api/myEvents", { withCredentials: true })
-      .then((res) => setMyEvents(res.data));
+      .post("/api/myEvents", userConnected, { withCredentials: true })
+      .then((res) => setMyEvents(res.data.result));
   }, []);
-  const [eventToDelete, setEventToDelete] = useState("");
-  const handleDeleteEvent = (event) => {
-    setEventToDelete(event);
-    event.preventDefault();
+  const handleDeleteEvent = (item) => {
     api
-      .delete(`/api/events/${eventToDelete}`, { withCredentials: true })
+      .delete(`/api/MyEvents/${item}`, userConnected, { withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
         console.warn(data);
       })
       // .then(
       //   setTimeout(() => {
-      //     window.location = "/event";
+      //     window.location = "/profile";
       //   }, 500)
       // )
       .catch("erreur");
@@ -216,15 +213,15 @@ export default function Profile() {
             <h1>Mis eventos</h1>
             {myEvents.map((event) => {
               return (
-                <div>
+                <div key={event.id}>
                   <p>{event.name}</p>
-                  <button type="button">Ya no voy</button>
                   <button
-                    onClick={() => handleDeleteEvent(event.id)}
+                    onClick={() => handleDeleteEvent(event.events_id)}
                     type="button"
                   >
-                    +Info
+                    Ya no voy
                   </button>
+                  <button type="button">+Info</button>
                 </div>
               );
             })}

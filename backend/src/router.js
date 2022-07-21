@@ -12,8 +12,9 @@ router.post("/api/auth/login", ConnexionController.login);
 router.post("/api/auth/register", ConnexionController.register);
 
 router.get("/api/events", EventsController.browse);
-router.get("/api/myEvents", EventsController.search);
+router.post("/api/myEvents", EventsController.search);
 router.post("/api/events/subscribe", EventsController.subscribe);
+router.delete("/api/MyEvents/:id", EventsController.deleteMyEvent);
 // router.get("/items/:id", ItemController.read);
 // router.put("/items/:id", ItemController.edit);
 // router.post("/items", ItemController.add);
