@@ -23,10 +23,13 @@ export default function EventModeList({ event }) {
     >
       <div>
         <h1>{event.name}</h1>
-        <p>{event.date}</p>
+        <p>
+          {event.date} a las {event.time} horas
+        </p>
         <p>{event.description}</p>
+        <p>{event.price}</p>
       </div>
-      <img alt="logoEvent" src={event.logoURL} />
+      <img className="logoEvent" alt="logoEvent" src={event.logoURL} />
     </button>
   );
 }

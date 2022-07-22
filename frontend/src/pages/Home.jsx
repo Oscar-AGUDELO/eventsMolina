@@ -28,12 +28,14 @@ export default function Home() {
       <main className="sectionsHome">
         <section className="sectionHome1">
           <img className="imgHome" src={image1} alt="logo" />
-          <p className="descriptionHome">
-            Un momento musical de adoración y exaltación a Dios. Un espacio de
-            encuentro e integración de jóvenes
-          </p>
         </section>
         <section className="sectionHome2">
+          <div className="descriptionHome">
+            <h1>PENTECOSTÉS</h1>
+            <br />
+            Un momento musical de adoración y exaltación a Dios. Un espacio de
+            encuentro e integración de jóvenes
+          </div>
           <button
             type="button"
             className="buttonNextEdition"

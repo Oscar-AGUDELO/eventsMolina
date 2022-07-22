@@ -5,7 +5,8 @@ import "./profile.css";
 import PagesContext from "../PagesContexts";
 
 export default function Profile() {
-  const { userConnected, setUserConnected } = useContext(PagesContext);
+  const { userConnected, setUserConnected, setSelectedEvent } =
+    useContext(PagesContext);
   const [modifyUser, setModifyUser] = useState(true);
   const [userLogin, setUserLogin] = useState({});
   const handleLogin = (event) => {
@@ -21,7 +22,7 @@ export default function Profile() {
       })
       .then(
         setTimeout(() => {
-          window.location = "/event";
+          window.location = "/home";
         }, 500)
       )
       .catch("erreur");
@@ -51,7 +52,7 @@ export default function Profile() {
         })
         .then(
           setTimeout(() => {
-            window.location = "/event";
+            window.location = "/home";
           }, 500)
         )
         .catch("erreur");
@@ -131,18 +132,31 @@ export default function Profile() {
       .post("/api/myEvents", userConnected, { withCredentials: true })
       .then((res) => setMyEvents(res.data.result));
   }, []);
+  const handleGoToEvent = (item) => {
+    console.warn(item);
+    console.warn(userConnected);
+    setSelectedEvent(item);
+    localStorage.setItem("selectedEvent", JSON.stringify(item));
+    setTimeout(() => {
+      window.location = "/event";
+    }, 50);
+  };
   const handleDeleteEvent = (item) => {
+    console.warn(item);
+    console.warn(userConnected);
     api
-      .delete(`/api/MyEvents/${item}`, userConnected, { withCredentials: true })
+      .delete(`/api/MyEvents/${item}/${userConnected.id}`, {
+        withCredentials: true,
+      })
       .then((res) => res.data)
       .then((data) => {
         console.warn(data);
       })
-      // .then(
-      //   setTimeout(() => {
-      //     window.location = "/profile";
-      //   }, 500)
-      // )
+      .then(
+        setTimeout(() => {
+          window.location = "/profile";
+        }, 50)
+      )
       .catch("erreur");
   };
   if (userConnected) {
@@ -160,6 +174,9 @@ export default function Profile() {
                     {userConnected.name} {userConnected.lastname}
                   </p>
                   <p>{userConnected.phone}</p>
+                  <br />
+                  <br />
+                  <br />
                   <button type="button" onClick={handleChangeModifyUser}>
                     Modificar
                   </button>
@@ -174,33 +191,38 @@ export default function Profile() {
                     name="name"
                     value={userToModify.name}
                     onChange={handleChangeModify}
+                    placeholder="Nombre"
                   />
                   <input
                     type="text"
                     name="lastname"
                     value={userToModify.lastname}
                     onChange={handleChangeModify}
+                    placeholder="Apellido"
                   />
                   <input
                     type="text"
                     name="phone"
                     value={userToModify.phone}
                     onChange={handleChangeModify}
+                    placeholder="Teléfono"
                   />
                   <input
                     type="password"
                     name="password"
                     value={userToModify.password}
                     onChange={handleChangeModify}
+                    placeholder="Nueva contraseña"
                   />
                   <input
                     type="password"
                     name="repeatPassword"
+                    placeholder="Repetir nueva contraseña"
                     value={userToModify.repeatPassword}
                     onChange={handleChangeModify}
                   />
                   <div>
-                    <input type="submit" value="Guardar" />
+                    <input id="save" type="submit" value="Guardar" />
                     <button type="button" onClick={handleChangeModifyUser}>
                       Cancelar
                     </button>
@@ -210,18 +232,37 @@ export default function Profile() {
             </div>
           </section>
           <section className="sectionProfile2">
+            <br />
+            <br />
             <h1>Mis eventos</h1>
+            <br />
             {myEvents.map((event) => {
               return (
                 <div key={event.id}>
                   <p>{event.name}</p>
+                  <br />
+                  <br />
                   <button
                     onClick={() => handleDeleteEvent(event.events_id)}
                     type="button"
                   >
                     Ya no voy
                   </button>
-                  <button type="button">+Info</button>
+                  <button type="button" onClick={() => handleGoToEvent(event)}>
+                    +Info
+                  </button>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                 </div>
               );
             })}
@@ -245,7 +286,7 @@ export default function Profile() {
               name="password"
               onChange={handleChangeLogin}
             />
-            <input type="submit" value="Conectarme" />
+            <input id="save" type="submit" value="Conectarme" />
           </form>
         </section>
         <section className="sectionProfile2">
@@ -275,7 +316,7 @@ export default function Profile() {
               name="repeatPassword"
               onChange={handleChangeRegister}
             />
-            <input type="submit" value="Registrarme" />
+            <input id="save" type="submit" value="Registrarme" />
           </form>
         </section>
       </main>

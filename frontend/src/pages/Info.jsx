@@ -1,14 +1,13 @@
 import Nav from "@components/Nav";
-import api from "@services/api";
-import { useEffect } from "react";
+import React from "react";
 import "./info.css";
 
 export default function Info() {
-  useEffect(() => {
-    api
-      .get("/api/events", { withCredentials: true })
-      .then((res) => console.warn(res));
-  }, []);
+  // useEffect(() => {
+  //   api
+  //     .get("/api/events", { withCredentials: true })
+  //     .then((res) => console.warn(res));
+  // }, []);
   return (
     <div id="infoContainer">
       <Nav />

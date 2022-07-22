@@ -1,16 +1,16 @@
 #profileContainer {
-  height: 100vh;
   width: 100%;
 }
 #profileContainer .sectionsProfile {
   height: 95%;
 }
 #profileContainer .sectionProfile1 {
-  height: 50%;
+  height: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 #profileContainer .ProfileForm {
@@ -18,20 +18,23 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-bottom: 3rem;
 }
 #profileContainer .ProfileForm input,
 #profileContainer .sectionProfile1 h1,
 #profileContainer .sectionProfile1 p {
   text-align: center;
   margin: 0.5rem 0;
+  padding: 0.25rem ;
 }
 #profileContainer .sectionProfile1 button {
   text-align: center;
   margin: 0 0.5rem;
 }
 
+
 #profileContainer .sectionProfile2 {
-  height: 50%;
+  height: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,4 +53,9 @@
 #profileContainer .sectionProfile2 .ProfileForm {
   text-align: center;
   padding-bottom: 4rem;
+}
+#profileContainer #save {
+  border: 1px solid var(--color-light);
+  padding: 1rem 2rem;
+  border-radius: 50px 100px;
 }

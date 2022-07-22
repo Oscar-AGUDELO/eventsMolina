@@ -14,12 +14,10 @@
   width: 100%;
 }
 #start .buttonStart {
-  background-color: var(--color-1);
-  border-radius: 15px;
-  padding: 0.3rem 1rem;
-  border: 2px solid var(--color-1);
+  border-radius: 50px 100px;
   transition: var(--transition);
 }
 #start .buttonStart:hover {
-  border: 2px solid var(--color-2);
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
 }

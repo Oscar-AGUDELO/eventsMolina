@@ -11,7 +11,6 @@ export default function Events() {
       .get("/api/events", { withCredentials: true })
       .then((res) => setEvents(res.data));
   }, []);
-  console.warn(events);
   return (
     <div id="eventsContainer">
       <Nav />

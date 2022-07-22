@@ -1,13 +1,13 @@
 #navContainer {
   display: flex;
   justify-content: space-around;
-  height: 5%;
+  height: 2rem;
 }
 
 #navContainer .navLink {
-  background-color: var(--color-1);
+  background-color: var(--color-dark);
   padding: 0 1rem;
-  border: 1px solid var(--color-light);
+  border: 0.5px solid var(--color-light);
   transition: var(--transition);
   flex: 1;
   color: var(--color-light);
@@ -16,10 +16,7 @@
   justify-content: center;
 }
 #navContainer .navLink:hover {
-  background-color: var(--color-1);
-  padding: 0.3rem 1rem;
-  border: 1px solid var(--color-light);
-  transition: var(--transition);
-  flex: 1;
-  color: var(--color-light);
+  background-color: var(--color-light);
+  border: 0.5px solid var(--color-dark);
+  color: var(--color-dark);
 }
