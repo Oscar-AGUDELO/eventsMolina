@@ -18,10 +18,10 @@ class Events_has_users extends AbstractManager {
     );
   }
 
-  findAndDeleteMyEvent(events_id, users_id, id) {
+  findAndDeleteMyEvent(item) {
     return this.connection.query(
-      `SELECT * FROM ${this.table} WHERE events_id= ? AND users_id= ?`,
-      [events_id, users_id, id]
+      `DELETE FROM ${this.table} WHERE events_id= ? AND users_id= ?`,
+      [item.id, item.user]
     );
   }
 

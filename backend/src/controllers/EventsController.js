@@ -35,10 +35,8 @@ class EventsController {
 
   static async deleteMyEvent(req, res) {
     try {
-      const { events_id, users_id } = req.body;
-      const { id } = req.params.id;
       models.events_has_users
-        .findAndDeleteMyEvent({ events_id, users_id, id })
+        .findAndDeleteMyEvent(req.params)
         .then(([result]) => {
           res.status(201).send({ message: "delete ok", result });
         })

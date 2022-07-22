@@ -20,8 +20,6 @@ class ConnexionController {
     try {
       const { email, password } = req.body;
       const [user] = await models.users.getUserByEmail(email);
-      console.warn(user);
-      console.warn(password);
       if (user[0]?.id === undefined) {
         return res.status(400).json({
           status: 400,
@@ -51,7 +49,7 @@ class ConnexionController {
 
   static async register(req, res) {
     try {
-      const { name, lastname, email, password, phone, paymentMode } = req.body;
+      const { name, lastname, email, password, phone } = req.body;
       const hash = await bcrypt.hash(password, 10);
       let validationErrors = null;
       const getEmail = await models.users.getUserByEmail(email);
@@ -79,7 +77,7 @@ class ConnexionController {
       }
 
       models.users
-        .insert({ name, lastname, email, phone, password: hash, paymentMode })
+        .insert({ name, lastname, email, phone, password: hash })
         .then(([result]) => console.warn(result))
         .then(async () => {
           const getUser = await models.users.getUserByEmail(email);

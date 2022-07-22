@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   `phone` VARCHAR(25) NOT NULL,
-  `paymentMode` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 
@@ -38,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
 --
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Oscar","AGUDELO","oscar@oscar.com","$2a$10$aRPSaN/EajpkvdRVrT1hQeXyBWe.UvTcILLi6.TFgx.ihCCkYqkWC","0636172130",1);
+INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Oscar","AGUDELO","oscar@oscar.com","$2a$10$aRPSaN/EajpkvdRVrT1hQeXyBWe.UvTcILLi6.TFgx.ihCCkYqkWC","0636172270");
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,27 +47,56 @@ UNLOCK TABLES;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventsMolina`.`playLists` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `artist` VARCHAR(255) NOT NULL,
   `url` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`));
 
+--
+-- Dumping data for table `playLists`
+--
+LOCK TABLES `playLists` WRITE;
+/*!40000 ALTER TABLE `playLists` DISABLE KEYS */;
+INSERT INTO `playLists` VALUES (1, "Todo Cambió","Sam Rivera & Blanca" ,"https://youtu.be/vKu-_zoIcL0"), (2, "Emmanuel / Como Dijiste","Sam Rivera & Melody Adorno" ,"https://youtu.be/ZGODCC8GhjA"), (3, "Promesas","Aaron Moses & Christine D'Clario" ,"https://youtu.be/qsREqdhgXgg"), (4, "Tumbas A Jardines","Brandon Lake & Edgar Aguilar" ,"https://youtu.be/iQpVoxPDpHw");
+/*!40000 ALTER TABLE `playLists` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- -----------------------------------------------------
 -- Table `eventsMolina`.`guestsList`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventsMolina`.`guestsList` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `url` LONGTEXT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `photo` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`));
 
+--
+-- Dumping data for table `guestsList`
+--
+LOCK TABLES `guestsList` WRITE;
+/*!40000 ALTER TABLE `guestsList` DISABLE KEYS */;
+INSERT INTO `guestsList` VALUES (1,"Edwin Figueredo" , "https://scontent.frmu1-1.fna.fbcdn.net/v/t39.30808-6/289602989_10228671895041725_8831943795245555258_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=XPb150W15-AAX-pie-c&_nc_oc=AQnhOjJFQ0BZa7FHaulItDMVE1v7-ZHiFMsWiCdzJzmxllrKgvuz1wnHyiNPyiZ9TmY&tn=nxw__36CrGjzVmjK&_nc_ht=scontent.frmu1-1.fna&oh=00_AT8Yw3s14NS4taFIEjiqtjwMzRNUI4wm0c1yeOglXokakA&oe=62DE2D02");
+/*!40000 ALTER TABLE `guestsList` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- -----------------------------------------------------
 -- Table `eventsMolina`.`sponsorsList`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventsMolina`.`sponsorsList` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `url` LONGTEXT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `moreInfo` LONGTEXT NOT NULL,
+  `logo` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`));
 
+--
+-- Dumping data for table `sponsorsList`
+--
+LOCK TABLES `sponsorsList` WRITE;
+/*!40000 ALTER TABLE `sponsorsList` DISABLE KEYS */;
+INSERT INTO `sponsorsList` VALUES (1, "Cita Diaria", "https://www.instagram.com/cita.diaria/", "https://live.staticflickr.com/65535/52232443086_0e6b897f2e_n.jpg"), (2, "TVC", "https://www.facebook.com/TelevisionCristianaTVC/", "https://scontent.frmu1-1.fna.fbcdn.net/v/t1.6435-9/70265780_2163539127278772_7910508372506443776_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LrHI2TnQKnMAX_ZpFBR&_nc_ht=scontent.frmu1-1.fna&oh=00_AT_3M_IL_gRjWFndBJLMKLf9My9jD9_KMGg_6ZiicwAMyQ&oe=62FEDF6E"), (3, "Oscar AGUDELO (Desarrollador)", "https://www.linkedin.com/in/oscar-agudelo-pro/", "https://media-exp1.licdn.com/dms/image/C4E03AQGsZNHkGlFO0A/profile-displayphoto-shrink_800_800/0/1646004397596?e=1663804800&v=beta&t=C1GfEJPyp9b__10_7juMdAX6TqI9Qov9XyiNwKnCzh0");
+/*!40000 ALTER TABLE `sponsorsList` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- -----------------------------------------------------
 -- Table `eventsMolina`.`events`
@@ -82,35 +110,14 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`events` (
   `description` LONGTEXT NOT NULL,
   `date` VARCHAR(255) NOT NULL,
   `price` VARCHAR(255) NOT NULL,
-  `logoURL` VARCHAR(255) NULL,
-  `playLists_id` INT NULL,
-  `guestsList_id` INT NULL,
-  `sponsorsList_id` INT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_events_playLists1_idx` (`playLists_id` ASC) VISIBLE,
-  INDEX `fk_events_guestsList1_idx` (`guestsList_id` ASC) VISIBLE,
-  INDEX `fk_events_sponsorsList1_idx` (`sponsorsList_id` ASC) VISIBLE,
-  CONSTRAINT `fk_events_playLists1`
-    FOREIGN KEY (`playLists_id`)
-    REFERENCES `eventsMolina`.`playLists` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_events_guestsList1`
-    FOREIGN KEY (`guestsList_id`)
-    REFERENCES `eventsMolina`.`guestsList` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_events_sponsorsList1`
-    FOREIGN KEY (`sponsorsList_id`)
-    REFERENCES `eventsMolina`.`sponsorsList` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+  `logoURL` LONGTEXT NULL,
+  PRIMARY KEY (`id`));
 --
 -- Dumping data for table `event`
 --
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,CURRENT_TIMESTAMP,'Av. Valencia, 33, 30500 Molina de Segura, Murcia','18:00','PENTECOSTÉS 2022','Primera edición...','2022-09-20','10,00€',NULL,NULL,NULL,NULL),(2,CURRENT_TIMESTAMP,'Próximamente','Próximamente','Pentecostés 2023','Próximamente...','2024','Próximamente',NULL,NULL,NULL,NULL),(3,CURRENT_TIMESTAMP,'Próximamente','Próximamente','Pentecostés 2024','Próximamente...','2024','Próximamente',NULL,NULL,NULL,NULL);
+INSERT INTO `events` VALUES (1,CURRENT_TIMESTAMP,'Av. Valencia, 33, 30500 Molina de Segura, Murcia','18:00','PENTECOSTÉS 2022','Primera edición...','2022-09-20','10,00€','https://i.pinimg.com/originals/10/05/22/10052218321c76cba71fcf954e604807.png');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
