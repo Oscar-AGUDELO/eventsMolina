@@ -3,7 +3,7 @@
   width: 100%;
 }
 #eventsContainer .sectionsEvents {
-  height: 95%;
+  height: calc(100% - 2rem);
 }
 #eventsContainer .sectionEvents1 {
   display: flex;

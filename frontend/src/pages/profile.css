@@ -2,7 +2,7 @@
   width: 100%;
 }
 #profileContainer .sectionsProfile {
-  height: 95%;
+  height: calc(100% - 2rem);
 }
 #profileContainer .sectionProfile1 {
   height: 65%;

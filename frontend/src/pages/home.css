@@ -3,7 +3,7 @@
   width: 100%;
 }
 #homeContainer .sectionsHome {
-  height: 95%;
+  height: calc(100% - 2rem);
 }
 #homeContainer .sectionHome1 {
   height: calc(100vh - 2rem);
