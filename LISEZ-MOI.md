@@ -11,7 +11,7 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 - Lancer la commande `npm run setup`
 - _NB: Pour exécuter le backend, un fichier d'environnement avec les données de connexion d'une BdD valide est nécesaire. Un modèle se trouve dans `backend/.env.sample`_
 
-### Liste des commandes et signification
+### Liste des commandes et significationaasasas
 
 - `setup` : Initialisation du frontend et du backend ainsi que des outils
 - `dev` : Démarrage des deux serveurs (frontend + backend) dans un même terminal
