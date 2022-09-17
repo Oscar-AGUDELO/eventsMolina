@@ -5,7 +5,7 @@ import "./profile.css";
 import PagesContext from "../PagesContexts";
 
 export default function Profile() {
-  const { userConnected, setUserConnected, setSelectedEvent } =
+  const { userConnected, setUserConnected, setSelectedEvent, pathUrl } =
     useContext(PagesContext);
   const [modifyUser, setModifyUser] = useState(true);
   const [userLogin, setUserLogin] = useState({});
@@ -22,7 +22,7 @@ export default function Profile() {
       })
       .then(
         setTimeout(() => {
-          window.location = "/home";
+          window.location = "/INICIO";
         }, 500)
       )
       .catch("erreur");
@@ -52,7 +52,7 @@ export default function Profile() {
         })
         .then(
           setTimeout(() => {
-            window.location = "/home";
+            window.location = "/INICIO";
           }, 500)
         )
         .catch("erreur");
@@ -73,7 +73,7 @@ export default function Profile() {
       })
       .then(
         setTimeout(() => {
-          window.location = "/home";
+          window.location = "/INICIO";
         }, 500)
       )
       .then(localStorage.removeItem("userConnected"))
@@ -102,7 +102,7 @@ export default function Profile() {
         })
         .then(
           setTimeout(() => {
-            window.location = "/home";
+            window.location = "/INICIO";
           }, 500)
         )
         .catch("erreur");
@@ -138,7 +138,7 @@ export default function Profile() {
     setSelectedEvent(item);
     localStorage.setItem("selectedEvent", JSON.stringify(item));
     setTimeout(() => {
-      window.location = "/event";
+      window.location = "/EVENTO";
     }, 50);
   };
   const handleDeleteEvent = (item) => {
@@ -154,7 +154,7 @@ export default function Profile() {
       })
       .then(
         setTimeout(() => {
-          window.location = "/profile";
+          window.location = "/PERFIL";
         }, 50)
       )
       .catch("erreur");
@@ -274,51 +274,55 @@ export default function Profile() {
   return (
     <div id="profileContainer">
       <Nav />
+
       <main className="sectionsProfile">
-        <section className="sectionProfile1">
-          <h1>Conectarme</h1>
-          <form className="ProfileForm" onSubmit={handleLogin}>
-            <p>Mail</p>
-            <input type="text" name="email" onChange={handleChangeLogin} />
-            <p>Contraseña</p>
-            <input
-              type="password"
-              name="password"
-              onChange={handleChangeLogin}
-            />
-            <input id="save" type="submit" value="Conectarme" />
-          </form>
-        </section>
-        <section className="sectionProfile2">
-          <h1>Crear una cuenta</h1>
-          <form className="ProfileForm" onSubmit={handleRegister}>
-            <p>Nombre</p>
-            <input type="text" name="name" onChange={handleChangeRegister} />
-            <p>Apellido</p>
-            <input
-              type="text"
-              name="lastname"
-              onChange={handleChangeRegister}
-            />
-            <p>Mail</p>
-            <input type="text" name="email" onChange={handleChangeRegister} />
-            <p>Teléfono</p>
-            <input type="text" name="phone" onChange={handleChangeRegister} />
-            <p>Contraseña</p>
-            <input
-              type="password"
-              name="password"
-              onChange={handleChangeRegister}
-            />
-            <p>Repetir contraseña</p>
-            <input
-              type="password"
-              name="repeatPassword"
-              onChange={handleChangeRegister}
-            />
-            <input id="save" type="submit" value="Registrarme" />
-          </form>
-        </section>
+        {pathUrl === "CONECTARME" ? (
+          <section className="sectionProfile1">
+            <h1>Conectarme</h1>
+            <form className="ProfileForm" onSubmit={handleLogin}>
+              <p>Mail</p>
+              <input type="text" name="email" onChange={handleChangeLogin} />
+              <p>Contraseña</p>
+              <input
+                type="password"
+                name="password"
+                onChange={handleChangeLogin}
+              />
+              <input id="save" type="submit" value="Conectarme" />
+            </form>
+          </section>
+        ) : (
+          <section className="sectionProfile2">
+            <h1>Crear una cuenta</h1>
+            <form className="ProfileForm" onSubmit={handleRegister}>
+              <p>Nombre</p>
+              <input type="text" name="name" onChange={handleChangeRegister} />
+              <p>Apellido</p>
+              <input
+                type="text"
+                name="lastname"
+                onChange={handleChangeRegister}
+              />
+              <p>Mail</p>
+              <input type="text" name="email" onChange={handleChangeRegister} />
+              <p>Teléfono</p>
+              <input type="text" name="phone" onChange={handleChangeRegister} />
+              <p>Contraseña</p>
+              <input
+                type="password"
+                name="password"
+                onChange={handleChangeRegister}
+              />
+              <p>Repetir contraseña</p>
+              <input
+                type="password"
+                name="repeatPassword"
+                onChange={handleChangeRegister}
+              />
+              <input id="save" type="submit" value="Registrarme" />
+            </form>
+          </section>
+        )}
       </main>
     </div>
   );

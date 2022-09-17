@@ -20,10 +20,11 @@
   flex-direction: column;
   padding: 2rem 3rem;
 }
-#infoContainer .contactForm input, #infoContainer .contactForm textarea{
+#infoContainer .contactForm input,
+#infoContainer .contactForm textarea {
   margin: 0.5rem 0;
 }
-#infoContainer .contactForm textarea{
+#infoContainer .contactForm textarea {
   height: 5rem;
   resize: none;
   overflow: scroll;

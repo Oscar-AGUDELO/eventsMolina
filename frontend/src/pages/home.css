@@ -1,36 +1,18 @@
 #homeContainer {
-  height: 100vh;
-  width: 100%;
-}
-#homeContainer .sectionsHome {
-  height: calc(100% - 2rem);
-}
-#homeContainer .sectionHome1 {
-  height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+#homeContainer .sectionsHome {
+}
+#homeContainer .sectionHome1 {
 }
 
 #homeContainer .imgHome {
-  height: 100%;
-  width: 100%;
 }
 #homeContainer .descriptionHome {
-  bottom: 60%;
-  color: var(--color-light);
-  margin: 15% 1.5rem 0 1.5rem;
 }
 
 #homeContainer .sectionHome2 {
-  position: absolute;
-  top: 2rem;
-  height: calc(100% - 2rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 #homeContainer .buttonNextEdition {
-  margin-bottom: 10%;
 }

@@ -21,7 +21,7 @@ export default function Events() {
       .then((res) => console.warn(res.data))
       .then(
         setTimeout(() => {
-          window.location = "/profile";
+          window.location = "/PERFIL";
         }, 50)
       )
       .catch("erreur");
@@ -135,7 +135,7 @@ export default function Events() {
           <br />
           <br />
           <br />
-          {userConnected ? (
+          {!userConnected ? (
             <>
               <p>
                 Ya queda poco para formar parte de {selectedEvent.name}.

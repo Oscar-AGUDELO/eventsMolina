@@ -8,6 +8,7 @@ export function ContextProvider({ children }) {
   const event = localStorage.getItem("selectedEvent");
   const [selectedEvent, setSelectedEvent] = useState(JSON.parse(event));
   const [userConnected, setUserConnected] = useState(JSON.parse(user));
+  const [pathUrl, SetPathUrl] = useState("");
 
   return (
     <Context.Provider
@@ -16,6 +17,8 @@ export function ContextProvider({ children }) {
         setSelectedEvent,
         userConnected,
         setUserConnected,
+        pathUrl,
+        SetPathUrl,
       }}
     >
       {children}

@@ -12,7 +12,7 @@ export default function EventModeList({ event }) {
       localStorage.setItem("selectedEvent", JSON.stringify(event));
     }
     setTimeout(() => {
-      navigate("/event");
+      navigate("/EVENTO");
     }, 500);
   };
   return (

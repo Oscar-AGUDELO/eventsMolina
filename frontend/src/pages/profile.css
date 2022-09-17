@@ -25,13 +25,12 @@
 #profileContainer .sectionProfile1 p {
   text-align: center;
   margin: 0.5rem 0;
-  padding: 0.25rem ;
+  padding: 0.25rem;
 }
 #profileContainer .sectionProfile1 button {
   text-align: center;
   margin: 0 0.5rem;
 }
-
 
 #profileContainer .sectionProfile2 {
   height: 35%;

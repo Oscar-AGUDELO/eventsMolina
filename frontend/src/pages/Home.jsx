@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import Nav from "@components/Nav";
 import api from "@services/api";
 import { useNavigate } from "react-router-dom";
-import image1 from "@assets/image1.jpg";
 import PagesContext from "../PagesContexts";
 import "./home.css";
 
@@ -19,20 +18,16 @@ export default function Home() {
       );
     });
     setTimeout(() => {
-      navigate("/event");
+      navigate("/EVENTO");
     }, 500);
   };
   return (
     <div id="homeContainer">
       <Nav />
       <main className="sectionsHome">
-        <section className="sectionHome1">
-          <img className="imgHome" src={image1} alt="logo" />
-        </section>
         <section className="sectionHome2">
+          {/* <img className="logoStart" src={logo} alt="logo" /> */}
           <div className="descriptionHome">
-            <h1>PENTECOSTÉS</h1>
-            <br />
             Un momento musical de adoración y exaltación a Dios. Un espacio de
             encuentro e integración de jóvenes
           </div>

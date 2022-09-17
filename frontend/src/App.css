@@ -22,8 +22,33 @@
   color: var(--color-light);
   background-color: transparent;
 }
-button{
+button {
   border: 1px solid var(--color-light);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px 100px;
 }
+
+@font-face {
+  font-family: integralCFBold;
+  src: url("./assets/fonts/WebfontIntegralCF/IntegralCF-Bold.woff")
+    format("woff");
+}
+@font-face {
+  font-family: integralCF;
+  src: url("./assets/fonts/WebfontIntegralCF/IntegralCF-Regular.woff")
+    format("woff");
+}
+
+#App .sectionfond {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/fondo.jpg");
+  background-size: contain;
+  position: absolute;
+  z-index: -10;
+}
+/* 
+#App .imgHome {
+  height:100%;
+  width:100%;
+} */
