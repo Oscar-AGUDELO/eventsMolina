@@ -32,14 +32,13 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
   `acquitted` tinyint NOT NULL DEFAULT '0',
   `paidTime` date DEFAULT NULL,
   `validatedTicket` tinyint NOT NULL DEFAULT '0',
-  `places` varchar(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`);
 --
 -- Dumping data for table `users`
 --
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Admin","ADMIN","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0);
+INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Admin","ADMIN","admin@admin.com","0123456789Admin",NULL,0,NULL,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 -- -----------------------------------------------------

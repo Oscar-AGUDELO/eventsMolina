@@ -1,7 +1,6 @@
 const express = require("express");
 
 const {
-  EventsController,
   ConnexionController,
   UsersController,
   DatasController,
@@ -10,22 +9,11 @@ const {
 const router = express.Router();
 
 router.post("/api/auth/login", ConnexionController.login);
-router.post("/api/auth/register", ConnexionController.register);
-
-router.get("/api/events", EventsController.browse);
-router.post("/api/myEvents", EventsController.search);
-router.post("/api/events/subscribe", EventsController.subscribe);
-router.delete("/api/MyEvents/:id/:user", EventsController.deleteMyEvent);
-// router.get("/items/:id", ItemController.read);
-// router.put("/items/:id", ItemController.edit);
-// router.post("/items", ItemController.add);
-// router.delete("/items/:id", ItemController.delete);
-
+router.put("/api/users/checkIn/:id", UsersController.checkIn);
+router.put("/api/users/acquitted/:id", UsersController.acquitted);
+router.post("/api/reserva", UsersController.subscribe);
+router.get("/api/users/:id/:name/:lastname", UsersController.ticket);
 router.get("/api/users", UsersController.browse);
-router.put("/api/users/update/:id", UsersController.edit);
-
-router.get("/api/guestsList", DatasController.browse1);
-router.get("/api/playlists", DatasController.browse2);
-router.get("/api/sponsorslist", DatasController.browse3);
+router.get("/api/playlists", DatasController.browse);
 
 module.exports = router;

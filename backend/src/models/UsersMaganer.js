@@ -3,23 +3,31 @@ const AbstractManager = require("./AbstractManager");
 class UsersManager extends AbstractManager {
   static table = "users";
 
-  getUserByEmail(email) {
-    return this.connection.query(`SELECT * FROM users WHERE email = ?`, [
-      email,
-    ]);
-  }
-
   insert(user) {
     return this.connection.query(
-      `insert into ${UsersManager.table} (name, lastname, email, password, phone) values (?, ?, ?, ?, ?)`,
-      [user.name, user.lastname, user.email, user.password, user.phone]
+      `insert into ${UsersManager.table} (name, lastname, email, places, phone) values (?, ?, ?, ?, ?)`,
+      [user.name, user.lastname, user.email, user.places, user.phone]
     );
   }
 
-  update(user) {
+  findTicket(data) {
     return this.connection.query(
-      `update ${UsersManager.table} set email = ?, name= ?, lastname= ?, phone= ?, password= ? where id = ?`,
-      [user.email, user.name, user.lastname, user.phone, user.password, user.id]
+      `SELECT * FROM users WHERE (id = ? AND name = ? AND lastname = ?)`,
+      [data.id, data.name, data.lastname]
+    );
+  }
+
+  updateCheckIn(data) {
+    return this.connection.query(
+      `update users set validatedTicket = ? where id = ?`,
+      [data.validatedTicket, data.id]
+    );
+  }
+
+  updateAcquitted(data) {
+    return this.connection.query(
+      `update users set paidTime = CURRENT_TIMESTAMP, acquitted = ? where id = ?`,
+      [data.acquitted, data.id]
     );
   }
 }
