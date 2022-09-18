@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
   `phone` varchar(25) NOT NULL,
   `qr` longtext,
   `acquitted` tinyint NOT NULL DEFAULT '0',
-  `paidTime` date DEFAULT NULL,
+  `paidTime` DATETIME DEFAULT NULL,
   `validatedTicket` tinyint NOT NULL DEFAULT '0',
   `places` varchar(15) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`));
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
 --
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Admin","ADMIN","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0), (2,CURRENT_TIMESTAMP,"Oscar","AGUDELO","oscar@test.com","0636172130",NULL,0,NULL,0,"ANULADO");
+INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Admin","ADMIN07-X","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0), (2,CURRENT_TIMESTAMP,"Oscar","AGUDELO","oscar@test.com","0636172130",NULL,0,NULL,0,"ANULADA07");
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 -- -----------------------------------------------------

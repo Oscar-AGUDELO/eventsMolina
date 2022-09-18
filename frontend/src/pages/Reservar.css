@@ -43,6 +43,9 @@
   font-family: integralCFBold;
   border-radius: 50px 100px;
 }
+#reservarContainer #save:hover {
+  color: rgb(248, 181, 255);
+}
 .logofooter {
 
   width: 65%;

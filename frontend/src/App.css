@@ -26,6 +26,9 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 50px 100px;
 }
+button:hover {
+  border: 2px solid var(--color-light);
+}
 
 @font-face {
   font-family: integralCFBold;
@@ -42,7 +45,11 @@ button {
   src: url("./assets/fonts/Gotham-Font/Gotham-Bold.otf")
     format("truetype");
 }
-
+@font-face {
+  font-family: phonk;
+  src: url("./assets/fonts/phonk-free-demo/phonk-free-demo.otf")
+    format("truetype");
+}
 #App .sectionfond {
   height: 100%;
   width: 100vw;

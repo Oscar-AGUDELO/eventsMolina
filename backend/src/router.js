@@ -10,6 +10,7 @@ const router = express.Router();
 
 router.post("/api/auth/login", ConnexionController.login);
 router.put("/api/users/checkIn/:id", UsersController.checkIn);
+router.put("/api/users/deleteReserva/:id", UsersController.anular);
 router.put("/api/users/acquitted/:id", UsersController.acquitted);
 router.post("/api/reserva", UsersController.subscribe);
 router.get("/api/users/:id/:name/:lastname", UsersController.ticket);

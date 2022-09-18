@@ -77,6 +77,9 @@ export default function Home() {
           </button>
 
           <img className="logofooter" src={repentecostes22footer} alt="logo" />
+          <br />
+          <br />
+          <br />
         </section>
       </main>
     </div>

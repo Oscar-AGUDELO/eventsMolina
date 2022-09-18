@@ -54,9 +54,10 @@ class UsersController {
 
   static async checkIn(req, res) {
     const data = req.body;
+    const id = req.params;
     try {
       models.users
-        .updateCheckIn(data)
+        .updateCheckIn(data, id)
         .then(([result]) => {
           res.status(201).send({ message: "User check-in OK", result });
         })
@@ -73,11 +74,32 @@ class UsersController {
 
   static async acquitted(req, res) {
     const data = req.body;
+    const id = req.params;
     try {
       models.users
-        .updateAcquitted(data)
+        .updateAcquitted(data, id)
         .then(([result]) => {
-          res.status(201).send({ message: "User check-in OK", result });
+          res.status(201).send({ message: "User Pago OK", result });
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+    return null;
+  }
+
+  static async anular(req, res) {
+    const data = req.body;
+    const id = req.params;
+    try {
+      models.users
+        .deleteReserva(data, id)
+        .then(([result]) => {
+          res.status(201).send({ message: "Reserva Anulada", result });
         })
         .catch((err) => {
           console.error(err);

@@ -5,20 +5,80 @@ import "./playlist.css";
 import CurrentPagesContext from "../PagesContexts";
 
 export default function AdminPanel() {
+  const { userIsConnected } = useContext(CurrentPagesContext);
   const [users, setUsers] = useState([]);
   useEffect(() => {
     api.get("/api/users", { withCredentials: true }).then((res) => {
       setUsers(res.data);
     });
   }, []);
-
-  const { userIsConnected } = useContext(CurrentPagesContext);
-
-  console.warn(users);
+  const updateAcquitted = (item) => {
+    api
+      .put(
+        `/api/users/acquitted/${item}`,
+        { acquitted: true },
+        { withCredentials: true }
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        console.warn(data.status);
+      })
+      .then(
+        setTimeout(() => {
+          window.location = "/admin-panel";
+        }, 1000)
+      )
+      .catch("erreur");
+  };
+  const updateCheckIn = (item) => {
+    api
+      .put(
+        `/api/users/checkIn/${item}`,
+        { validatedTicket: true },
+        { withCredentials: true }
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        console.warn(data.status);
+      })
+      .then(
+        setTimeout(() => {
+          window.location = "/admin-panel";
+        }, 1000)
+      )
+      .catch("erreur");
+  };
+  const deleteReserva = (item) => {
+    api
+      .put(
+        `/api/users/deleteReserva/${item}`,
+        { anular: "ANULADA07" },
+        { withCredentials: true }
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        console.warn(data.status);
+      })
+      .then(
+        setTimeout(() => {
+          window.location = "/admin-panel";
+        }, 1000)
+      )
+      .catch("erreur");
+  };
+  const goOut = () => {
+    localStorage.removeItem("AdminPente");
+    setTimeout(() => {
+      window.location = "/";
+    }, 1000);
+  };
   if (userIsConnected === "AdminIsHere") {
     return (
       <div id="eventsContainer">
         <Nav />
+        <button type="button" onClick={goOut}>
+          Desconexión
+        </button>
         <main className="sectionsEvents">
           <section
             className="sectionEvents1"
@@ -36,7 +96,10 @@ export default function AdminPanel() {
                 margin: "1rem 0 0 0",
               }}
             >
-              <table align="center">
+              <table
+                align="center"
+                style={{ margin: "1rem", border: "3px #ffffff solid" }}
+              >
                 <thead>
                   <tr>
                     <th
@@ -87,11 +150,16 @@ export default function AdminPanel() {
                     >
                       Click Check-In
                     </th>
+                    <th
+                      style={{ padding: "1rem", border: "3px #ffffff dashed" }}
+                    >
+                      Click Anular
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {users.map((user) => (
-                    <tr>
+                    <tr key={user.id}>
                       <td style={{ padding: "1rem", border: "3px #ffffff" }}>
                         {user.id}
                       </td>
@@ -103,7 +171,7 @@ export default function AdminPanel() {
                           .join("/")}
                       </td>
                       <td style={{ padding: "1rem", border: "3px #ffffff " }}>
-                        {user.places}
+                        {user.places === "ANULADA07" ? "ANULADA" : user.places}
                       </td>
                       <td style={{ padding: "1rem", border: "3px #ffffff " }}>
                         {user.name}
@@ -127,14 +195,40 @@ export default function AdminPanel() {
                           : "*---*"}
                       </td>
                       <td style={{ padding: "1rem", border: "3px #ffffff " }}>
-                        <button type="button">
-                          {user.acquitted ? "Cobrado" : "Cobrar"}
-                        </button>
+                        {user.places === "ANULADA07" ? (
+                          "*---*"
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => updateAcquitted(user.id)}
+                          >
+                            {user.acquitted ? "PAGADO" : "PAGAR"}
+                          </button>
+                        )}
                       </td>
                       <td style={{ padding: "1rem", border: "3px #ffffff " }}>
-                        <button type="button">
-                          {user.validatedTicket ? "Presente" : "Check-In"}
-                        </button>
+                        {user.places === "ANULADA07" ? (
+                          "*---*"
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => updateCheckIn(user.id)}
+                          >
+                            {user.validatedTicket ? "PRESENTE" : "Check-In"}
+                          </button>
+                        )}
+                      </td>
+                      <td style={{ padding: "1rem", border: "3px #ffffff " }}>
+                        {user.places === "ANULADA07" ? (
+                          "Debe volver a reservar"
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => deleteReserva(user.id)}
+                          >
+                            ANULAR RESERVA
+                          </button>
+                        )}
                       </td>
                     </tr>
                   ))}

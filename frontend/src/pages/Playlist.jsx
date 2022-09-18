@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import Nav from "@components/Nav";
 import api from "@services/api";
 import { useEffect, useState } from "react";
@@ -16,8 +17,15 @@ export default function Playlist() {
       <Nav />
       <main className="sectionsEvents">
         <section className="sectionEvents1">
+          <h2>WORSHIP</h2>
+          <p>LISTA DE CANCIONES</p>
+          <br />
+          <br />
+          <br />
           {playlist.map((song) => (
-            <div>{song.title}</div>
+            <a href={song.url} target="_blank" rel="noreferrer">
+              {song.title} // {song.artist}
+            </a>
           ))}
         </section>
       </main>

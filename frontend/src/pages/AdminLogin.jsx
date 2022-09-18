@@ -7,18 +7,17 @@ import repentecostes22footer from "@assets/repentecostes22footer.png";
 export default function AdminLogin() {
   const [dataReserva, setDataReserva] = useState({
     name: "Admin",
-    lastname: "ADMIN",
+    lastname: "ADMIN07-X",
     email: "admin@admin.com",
     phone: "0123456789Admin",
   });
   const handleReserva = (event) => {
-    console.warn(dataReserva);
     event.preventDefault();
     api
       .post("/api/auth/login", dataReserva, { withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
-        console.warn(data);
+        console.warn(data.status);
         if (data.userAdmin07 === "AdminIsHere") {
           localStorage.setItem("AdminPente", JSON.stringify(data.userAdmin07));
         }
@@ -26,7 +25,7 @@ export default function AdminLogin() {
       .then(
         setTimeout(() => {
           window.location = "/admin-panel";
-        }, 500)
+        }, 2000)
       )
       .catch("erreur");
   };
@@ -73,6 +72,7 @@ export default function AdminLogin() {
           />
           <br />
           <input id="save" type="submit" value="ENVIAR" />
+          {dataReserva ? <p>Wait...</p> : ""}
         </form>
         <img className="logofooter" src={repentecostes22footer} alt="logo" />
       </section>

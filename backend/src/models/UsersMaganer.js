@@ -17,18 +17,25 @@ class UsersManager extends AbstractManager {
     );
   }
 
-  updateCheckIn(data) {
+  updateCheckIn(data, id) {
     return this.connection.query(
       `update users set validatedTicket = ? where id = ?`,
-      [data.validatedTicket, data.id]
+      [data.validatedTicket, id.id]
     );
   }
 
-  updateAcquitted(data) {
+  updateAcquitted(data, id) {
     return this.connection.query(
       `update users set paidTime = CURRENT_TIMESTAMP, acquitted = ? where id = ?`,
-      [data.acquitted, data.id]
+      [data.acquitted, id.id]
     );
+  }
+
+  deleteReserva(data, id) {
+    return this.connection.query(`update users set places = ? where id = ?`, [
+      data.anular,
+      id.id,
+    ]);
   }
 }
 

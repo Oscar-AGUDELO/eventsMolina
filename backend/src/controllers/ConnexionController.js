@@ -4,7 +4,7 @@ class ConnexionController {
       const data = req.body;
       if (
         data.name === "Admin" &&
-        data.lastname === "ADMIN" &&
+        data.lastname === "ADMIN07-X" &&
         data.email === "admin@admin.com" &&
         data.phone === "0123456789Admin"
       ) {
