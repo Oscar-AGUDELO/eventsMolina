@@ -4,21 +4,17 @@ import React, { createContext, useState } from "react";
 const Context = createContext();
 
 export function ContextProvider({ children }) {
-  const user = localStorage.getItem("userConnected");
-  const event = localStorage.getItem("selectedEvent");
-  const [selectedEvent, setSelectedEvent] = useState(JSON.parse(event));
-  const [userConnected, setUserConnected] = useState(JSON.parse(user));
   const [pathUrl, SetPathUrl] = useState("");
+  const user = localStorage.getItem("AdminPente");
+  const [userIsConnected, setUserIsConnected] = useState(JSON.parse(user));
 
   return (
     <Context.Provider
       value={{
-        selectedEvent,
-        setSelectedEvent,
-        userConnected,
-        setUserConnected,
         pathUrl,
         SetPathUrl,
+        userIsConnected,
+        setUserIsConnected,
       }}
     >
       {children}

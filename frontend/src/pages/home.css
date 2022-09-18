@@ -1,18 +1,81 @@
 #homeContainer {
+  height: calc(100vh);
+  overflow: scroll;
+}
+
+#homeContainer .sectionsHome {
+  height: calc(100vh - 3rem);
+}
+
+#homeContainer .sectionHome1 {
   display: flex;
   flex-direction: column;
-}
-#homeContainer .sectionsHome {
-}
-#homeContainer .sectionHome1 {
+  align-items: center;
 }
 
-#homeContainer .imgHome {
+#homeContainer .iconsRs {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
 }
+
+#homeContainer .iconsRs .icono {
+  height: 4rem;
+  width: 2rem;
+  object-fit: cover;
+}
+
+#homeContainer .logoHome {
+  width: 85%;
+}
+
 #homeContainer .descriptionHome {
+  width: 70%;
+  font-family: GothamBold;
+  font-size: 0.8rem;
+  margin-top: 2rem;
 }
 
-#homeContainer .sectionHome2 {
+#homeContainer .infoHome {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  font-family: GothamBold;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  align-items: center;
 }
-#homeContainer .buttonNextEdition {
+#homeContainer .infoHome h2{
+  font-family: integralCF;
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+}
+#homeContainer .infoHome p{
+  font-family: GothamBold;
+}
+#homeContainer .iconoubicacion {
+  margin-top: -0.7rem;
+  height: 4rem;
+  width: 2rem;
+  object-fit: cover;
+}
+#homeContainer .iconoagenda {
+  height: 2rem;
+  object-fit: cover;
+}
+#homeContainer .infoHome .verso {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#homeContainer .invitamos {
+  font-size:0.9rem !important ;
+  width: 90%;
+
+  
+}
+#homeContainer .buttonReservar {
+  margin: 2rem 0;
+  font-family: integralCFBold;
+  border: 2px solid ;
 }

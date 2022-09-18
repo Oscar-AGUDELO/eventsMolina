@@ -1,9 +1,11 @@
+
 #eventsContainer {
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh);
+  overflow: scroll;
 }
-#eventsContainer .sectionsEvents {
-  height: calc(100% - 2rem);
+
+#eventsContainer .sectionsHsectionsEventsome {
+  height: calc(100vh - 3rem);
 }
 #eventsContainer .sectionEvents1 {
   display: flex;

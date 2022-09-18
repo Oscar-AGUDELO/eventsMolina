@@ -2,8 +2,8 @@
 const models = require("../models");
 
 class DatasController {
-  static browse2 = (req, res) => {
-    models.playlists
+  static browse = (req, res) => {
+    models.playLists
       .findAll()
       .then(([rows]) => {
         res.send(rows);

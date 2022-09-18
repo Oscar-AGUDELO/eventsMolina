@@ -4,11 +4,6 @@ import emailjs from "@emailjs/browser";
 import "./info.css";
 
 export default function Info() {
-  // useEffect(() => {
-  //   api
-  //     .get("/api/events", { withCredentials: true })
-  //     .then((res) => console.warn(res));
-  // }, []);
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();

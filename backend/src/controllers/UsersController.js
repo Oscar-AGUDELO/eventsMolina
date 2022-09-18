@@ -9,13 +9,12 @@ class UsersController {
       })
       .catch((err) => {
         console.error(err);
-        res.sendStatus(500).send("hola");
+        res.sendStatus(500).send("error");
       });
   };
 
   static async ticket(req, res) {
     try {
-      console.warn(req.params);
       models.users
         .findTicket(req.params)
         .then(([result]) => {
