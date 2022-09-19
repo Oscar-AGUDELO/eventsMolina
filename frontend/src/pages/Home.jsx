@@ -1,3 +1,4 @@
+import React from "react";
 import Nav from "@components/Nav";
 import { useNavigate } from "react-router-dom";
 import iconoagenda from "@assets/iconoagenda.png";
@@ -7,6 +8,7 @@ import iconoubicacion from "@assets/iconoubicacion.png";
 import iconoyoutube from "@assets/iconoyoutube.png";
 import repentecostes22 from "@assets/repentecostes22.png";
 import repentecostes22footer from "@assets/repentecostes22footer.png";
+import biblie from "@assets/biblie.png";
 import "./home.css";
 
 export default function Home() {
@@ -14,7 +16,6 @@ export default function Home() {
   const goToReservas = () => {
     navigate("/RESERVAR");
   };
-
   return (
     <div id="homeContainer">
       <Nav />
@@ -54,6 +55,17 @@ export default function Home() {
             <img className="iconoagenda" src={iconoagenda} alt="iconoagenda" />
             <p>25 de Noviembre 2022</p>
             <p>20:00 Horas</p>
+          </div>
+          <div className="infoHome">
+            <h2>PREDICADOR INVITADO</h2>
+            <img className="iconoabiblie" src={biblie} alt="biblie" />
+            <a
+              href="https://www.instagram.com/figueredo_ministro/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>Pastor Edwin Figueredo</p>
+            </a>
           </div>
           <div className="infoHome">
             <p className="verso">

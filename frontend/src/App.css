@@ -64,3 +64,25 @@ button:hover {
   height:100%;
   width:100%;
 } */
+
+#rienContainer, #p404Container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/Wall.jpg");
+  background-size: cover;
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#rienContainer h4, #p404Container h4 {
+  background-color: #000000;
+  padding: 3%;
+  font-size: 200%;
+}
+
+#rienContainer .logoZ, #p404Container .logoZ {
+  width: 30%;
+}

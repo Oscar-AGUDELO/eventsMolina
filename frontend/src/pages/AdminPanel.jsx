@@ -152,7 +152,11 @@ export default function AdminPanel() {
             >
               <table
                 align="center"
-                style={{ margin: "1rem", border: "3px #ffffff solid" }}
+                style={{
+                  margin: "1rem",
+                  border: "3px #ffffff solid",
+                  backgroundColor: "rgba(0, 0, 0, 0.616)",
+                }}
               >
                 <thead>
                   <tr>

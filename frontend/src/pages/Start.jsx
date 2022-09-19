@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import videoStart from "@assets/FondoVertical.mp4";
 import logo from "@assets/pentecostes22colores.png";

@@ -89,7 +89,7 @@ export default function Info() {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icono" src={iconolinkedin} alt="instagram" />
+            <img className="icono" src={iconolinkedin} alt="iconolinkedin" />
             <p>Oscar Agudelo - Desarrollador Web</p>
           </a>
           <a
@@ -97,7 +97,7 @@ export default function Info() {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icono" src={iconofacebook} alt="iconofacebook" />
+            <img className="icono" src={iconoinstagram} alt="iconoinstagram" />
             <p>Cita Diaria</p>
           </a>
           <a
@@ -105,7 +105,7 @@ export default function Info() {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icono" src={iconofacebook} alt="iconofacebook" />
+            <img className="icono" src={iconoinstagram} alt="iconoinstagram" />
             <p>Televisión Cristiana - TVC</p>
           </a>
         </div>

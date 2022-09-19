@@ -1,42 +1,52 @@
-#start {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-#start video {
+#reservaContainer {
   height: 100%;
-}
-#start .qrImage {
-  width: 100%;
-}
-#start h2 {
-  font-family: integralCF;
-  letter-spacing: 0.3rem;
+  width: 100vw;
+  background-image: url("./../assets/Wall.jpg");
+  background-size: cover;
+  position: absolute;
+  background-repeat:repeat;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-#start .buttonStartContainer {
-  position: absolute;
+
+#reservaContainer .ticketfondo {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+#reservaContainer .containContainerReserva {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#reservaContainer .containContainerReserva .qrImage {
+  position: fixed;
+  height: 15%;
+  bottom: 11vh;
+}
+#reservaContainer .textContainerReserva {
+  position: fixed;
+  bottom: 43vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  align-items: flex-start;
+  width: 60%;
+  padding: 0 0 0 22%;
 }
-#start .buttonStart {
-  border-radius: 50px 100px;
-  border: solid 2px;
-  margin-top: -3rem;
-  transition: var(--transition);
-  font-family: integralCFBold;
-  font-size: 1rem;
-  height: 3rem;
-  width: 7rem;
-  text-align: center;
-  letter-spacing: 0.3rem;
-}
-#start .buttonStart:hover {
-  border: 3px solid var(--color-light);
-  color: var(--color-darlight);
+#reservaContainer .textContainerReserva p {
+  margin: 1.8vh 0 0 0;
+  font-family: GothamBold;
+  font-size: 1.8vh;
+  width: 77%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
 }
