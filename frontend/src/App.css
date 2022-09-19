@@ -1,56 +1,90 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --color-1: #ffe200;
+  --color-2: #ec5f5d;
+  --color-3: #6fceb4;
+  --color-4: #5a94d2;
+  --color-5: #ff3333;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --transition: all 500ms ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-light);
+  background-color: transparent;
+}
+button {
+  border: 1px solid var(--color-light);
+  padding: 0.5rem 1rem;
+  border-radius: 50px 100px;
+}
+button:hover {
+  border: 2px solid var(--color-light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: integralCFBold;
+  src: url("./assets/fonts/WebfontIntegralCF/IntegralCF-Bold.woff")
+    format("woff");
 }
+@font-face {
+  font-family: integralCF;
+  src: url("./assets/fonts/WebfontIntegralCF/IntegralCF-Regular.woff")
+    format("woff");
+}
+@font-face {
+  font-family: GothamBold;
+  src: url("./assets/fonts/Gotham-Font/Gotham-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: phonk;
+  src: url("./assets/fonts/phonk-free-demo/phonk-free-demo.otf")
+    format("truetype");
+}
+#App .sectionfond {
+  height: 100%;
+  width: 100vw;
+  background-image: url("./assets/fondo.jpg");
+  background-size: cover;
+  position: absolute;
+  background-repeat: repeat;
+  z-index: -10;
+}
+/* 
+#App .imgHome {
+  height:100%;
+  width:100%;
+} */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#rienContainer,
+#p404Container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/Wall.jpg");
+  background-size: cover;
+  position: absolute;
+  z-index: 15;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#rienContainer h4,
+#p404Container h4 {
+  background-color: #000000;
+  padding: 3%;
+  font-size: 200%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
+#rienContainer .logoZ,
+#p404Container .logoZ {
+  width: 30%;
 }

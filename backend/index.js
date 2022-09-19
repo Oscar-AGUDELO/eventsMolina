@@ -1,14 +1,16 @@
+/* eslint-disable no-undef */
 require("dotenv").config();
 
 const app = require("./src/app");
 
-const port = parseInt(process.env.APP_PORT ?? "5000", 10);
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, (err) => {
-  if (err) {
-    console.error("Something bad happened");
-  } else {
-    // eslint-disable-next-line no-restricted-syntax
-    console.log(`Server is listening on ${port}`);
-  }
-});
+if (typeof PhusionPassenger !== "undefined") {
+  PhusionPassenger.configure({ autoInstall: false });
+}
+if (typeof PhusionPassenger !== "undefined") {
+  app.listen("passenger");
+} else {
+  app.listen(PORT);
+  console.warn(`server listen on port : ${PORT}`);
+}

@@ -1,0 +1,51 @@
+#reservaContainer {
+  height: 100%;
+  width: 100vw;
+  background-image: url("./../assets/Wall.jpg");
+  background-size: cover;
+  position: absolute;
+  background-repeat: repeat;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#reservaContainer .ticketfondo {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+#reservaContainer .containContainerReserva {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#reservaContainer .containContainerReserva .qrImage {
+  position: fixed;
+  height: 15%;
+  bottom: 11vh;
+}
+#reservaContainer .textContainerReserva {
+  position: fixed;
+  bottom: 43vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  padding: 0 0 0 22%;
+}
+#reservaContainer .textContainerReserva p {
+  margin: 1.8vh 0 0 0;
+  font-family: GothamBold;
+  font-size: 1.8vh;
+  width: 77%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}

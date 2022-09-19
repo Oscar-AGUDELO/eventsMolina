@@ -1,0 +1,52 @@
+#reservarContainer {
+  width: 100%;
+}
+
+#reservarContainer .ProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+#reservarContainer .ProfileForm input {
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0.25rem;
+}
+
+#reservarContainer .sectionReservar {
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reservarContainer .ProfileForm input,
+#reservarContainer .sectionReservar h1,
+#reservarContainer .sectionReservar p {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-family: GothamBold;
+}
+#reservarContainer .sectionReservar button {
+  text-align: center;
+  margin: 0 0.5rem;
+}
+#reservarContainer .sectionReservar .ProfileForm {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+#reservarContainer #save {
+  border: 1px solid var(--color-light);
+  padding: 1rem 2rem;
+  font-family: integralCFBold;
+  border-radius: 50px 100px;
+}
+#reservarContainer #save:hover {
+  color: rgb(248, 181, 255);
+}
+.logofooter {
+  width: 65%;
+  margin-bottom: 1rem;
+}

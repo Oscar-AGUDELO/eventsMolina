@@ -1,13 +1,20 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const {
+  ConnexionController,
+  UsersController,
+  DatasController,
+} = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.post("/auth/login", ConnexionController.login);
+router.put("/users/checkIn/:id", UsersController.checkIn);
+router.put("/users/deleteReserva/:id", UsersController.anular);
+router.put("/users/acquitted/:id", UsersController.acquitted);
+router.post("/reserva", UsersController.subscribe);
+router.get("/users/:id/:name/:lastname", UsersController.ticket);
+router.get("/users", UsersController.browse);
+router.get("/playlists", DatasController.browse);
 
 module.exports = router;

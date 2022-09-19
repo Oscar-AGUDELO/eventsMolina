@@ -1,0 +1,76 @@
+#navContainer {
+  display: flex;
+  justify-content: space-around;
+  z-index: 0;
+  width: 100vw;
+  height: 3rem;
+}
+#navContainer .hiddenContainer {
+  display: flex;
+  width: 100%;
+  margin: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+#navContainer .hiddenOnPage {
+  font-family: integralCF;
+}
+#navContainer .iconNav {
+  height: 90%;
+}
+#navContainer .iconNavButton {
+  height: 90%;
+}
+#navContainer .navContainerOpen {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/fondo.jpg");
+  background-size: contain;
+  position: absolute;
+  z-index: 0;
+}
+#navContainer .showContainerButton {
+  display: flex;
+  margin: 0 1rem 1rem 0;
+  align-items: center;
+  justify-content: flex-end;
+  height: 3rem;
+}
+#navContainer .linksNav {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: var(--transition);
+}
+#navContainer .userConnectedNav button {
+  border: 0;
+  border-radius: 0;
+}
+#navContainer .userConnectedNav button:hover {
+  border: none;
+}
+#navContainer .navLink {
+  padding: 1rem 1rem 1rem 0rem;
+  width: 75%;
+  transition: var(--transition);
+  flex: 1;
+  color: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-family: integralCF;
+  font-size: 1.3rem;
+  border-top: 3px solid var(--color-light) !important;
+}
+#navContainer .navLinkBotton {
+  border-bottom: 3px solid var(--color-light) !important;
+}
+
+#navContainer .navLink:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
