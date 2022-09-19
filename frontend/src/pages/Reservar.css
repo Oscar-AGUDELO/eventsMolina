@@ -9,7 +9,7 @@
   text-align: center;
   padding-bottom: 3rem;
 }
-#reservarContainer .ProfileForm input{
+#reservarContainer .ProfileForm input {
   text-align: center;
   margin: 0.5rem 0;
   padding: 0.25rem;
@@ -47,7 +47,6 @@
   color: rgb(248, 181, 255);
 }
 .logofooter {
-
   width: 65%;
   margin-bottom: 1rem;
 }

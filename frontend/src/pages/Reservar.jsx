@@ -1,6 +1,6 @@
 import Nav from "@components/Nav";
 import api from "@services/api";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Reservar.css";
 import repentecostes22footer from "@assets/repentecostes22footer.png";
 import Swal from "sweetalert2";

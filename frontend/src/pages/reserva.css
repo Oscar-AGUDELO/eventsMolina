@@ -4,14 +4,13 @@
   background-image: url("./../assets/Wall.jpg");
   background-size: cover;
   position: absolute;
-  background-repeat:repeat;
+  background-repeat: repeat;
   z-index: 10;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
-
 
 #reservaContainer .ticketfondo {
   height: 100vh;

@@ -8,13 +8,13 @@ const {
 
 const router = express.Router();
 
-router.post("/api/auth/login", ConnexionController.login);
-router.put("/api/users/checkIn/:id", UsersController.checkIn);
-router.put("/api/users/deleteReserva/:id", UsersController.anular);
-router.put("/api/users/acquitted/:id", UsersController.acquitted);
-router.post("/api/reserva", UsersController.subscribe);
-router.get("/api/users/:id/:name/:lastname", UsersController.ticket);
-router.get("/api/users", UsersController.browse);
-router.get("/api/playlists", DatasController.browse);
+router.post("/auth/login", ConnexionController.login);
+router.put("/users/checkIn/:id", UsersController.checkIn);
+router.put("/users/deleteReserva/:id", UsersController.anular);
+router.put("/users/acquitted/:id", UsersController.acquitted);
+router.post("/reserva", UsersController.subscribe);
+router.get("/users/:id/:name/:lastname", UsersController.ticket);
+router.get("/users", UsersController.browse);
+router.get("/playlists", DatasController.browse);
 
 module.exports = router;
