@@ -26,7 +26,7 @@ class UsersManager extends AbstractManager {
 
   updateAcquitted(data, id) {
     return this.connection.query(
-      `update users set paidTime = CURRENT_TIMESTAMP, acquitted = ? where id = ?`,
+      `update users set paidTime = NOW(), acquitted = ? where id = ?`,
       [data.acquitted, id.id]
     );
   }

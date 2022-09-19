@@ -7,7 +7,9 @@ import "./reserva.css";
 
 function Reserva() {
   const { id, name, lastname } = useParams();
-  const [ticket, setTicket] = useState({});
+  const [ticket, setTicket] = useState({
+    problem: "Hay un problema con la reserva o no existe",
+  });
   const [qrImage, setQrImage] = useState("QR img not working");
   const [qrText, setQrText] = useState("QR text not working");
 
@@ -19,11 +21,15 @@ function Reserva() {
         console.warn(data);
         if (data) {
           setTicket(data);
-          console.warn(`ticket is set !`);
+          console.warn(ticket);
         }
       })
       .then(() => {
-        setQrText(`${ticket.name} : ${ticket.createTime}`);
+        if (ticket.name === undefined) {
+          setQrText(`${ticket.problem}`);
+        } else {
+          setQrText(`${ticket.name} : ${ticket.createTime}`);
+        }
       })
       .then(() => {
         QRCode.toDataURL(qrText).then((trasnData) => {

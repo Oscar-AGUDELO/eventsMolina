@@ -3,24 +3,68 @@ import api from "@services/api";
 import { useState, useEffect } from "react";
 import "./Reservar.css";
 import repentecostes22footer from "@assets/repentecostes22footer.png";
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
 
 export default function Reservar() {
   const [dataReserva, setDataReserva] = useState({});
   const handleReserva = (event) => {
     event.preventDefault();
-    console.warn(dataReserva);
     api
       .post("/api/reserva", dataReserva, { withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
-        console.warn(data);
+        console.warn(data.status);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "¡Tu reserva ha sido confirmada!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        emailjs
+          .send(
+            "service_contact",
+            "template_reserva",
+            dataReserva,
+            "K_Pr45Bpob2jbHe-a"
+          )
+          .then(
+            (result) => {
+              console.warn(result.text);
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Correo enviado!",
+                showConfirmButton: false,
+                timer: 2500,
+              });
+            },
+            (error) => {
+              console.error(error.text);
+              Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "¡Ups! hay un problema...",
+                showConfirmButton: false,
+                timer: 2000,
+              });
+            }
+          );
       })
       .then(
         setTimeout(() => {
           window.location = "/INICIO";
-        }, 500)
+        }, 2500)
       )
       .catch("erreur");
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "¡Ups! hay un problema...",
+      showConfirmButton: false,
+      timer: 2000,
+    });
   };
   const handleChangeRegister = (e) => {
     setDataReserva({

@@ -23,7 +23,7 @@ USE `eventsMolina` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createTime` DATETIME NOT NULL DEFAULT NOW(),
   `name` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
 --
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,CURRENT_TIMESTAMP,"Admin","ADMIN07-X","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0), (2,CURRENT_TIMESTAMP,"Oscar","AGUDELO","oscar@test.com","0636172130",NULL,0,NULL,0,"ANULADA07");
+INSERT INTO `users` VALUES (1,NOW(),"Admin","ADMIN07-X","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0), (2,NOW(),"Oscar","AGUDELO","oscar@test.com","0636172130",NULL,0,NULL,0,"ANULADA07");
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 -- -----------------------------------------------------

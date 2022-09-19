@@ -3,6 +3,7 @@ import api from "@services/api";
 import { useState, useEffect } from "react";
 import "./Reservar.css";
 import repentecostes22footer from "@assets/repentecostes22footer.png";
+import Swal from "sweetalert2";
 
 export default function AdminLogin() {
   const [dataReserva, setDataReserva] = useState({
@@ -16,18 +17,30 @@ export default function AdminLogin() {
     api
       .post("/api/auth/login", dataReserva, { withCredentials: true })
       .then((res) => res.data)
-      .then((data) => {
-        console.warn(data.status);
-        if (data.userAdmin07 === "AdminIsHere") {
-          localStorage.setItem("AdminPente", JSON.stringify(data.userAdmin07));
-        }
-      })
       .then(
-        setTimeout(() => {
-          window.location = "/admin-panel";
-        }, 2000)
-      )
-      .catch("erreur");
+        (data) => {
+          console.warn(data);
+          if (data.userAdmin07 === "AdminIsHere") {
+            localStorage.setItem(
+              "AdminPente",
+              JSON.stringify(data.userAdmin07)
+            );
+            setTimeout(() => {
+              window.location = "/admin-panel";
+            }, 2000);
+          }
+        },
+        (error) => {
+          console.error(error.text);
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "¡Contraseñas incorrectas!",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        }
+      );
   };
   const handleChangeRegister = (e) => {
     setDataReserva({

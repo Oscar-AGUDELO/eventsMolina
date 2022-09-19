@@ -13,6 +13,10 @@ class ConnexionController {
           message: "User is logged",
           userAdmin07: "AdminIsHere",
         });
+      } else {
+        res.status(400).json({
+          message: "error",
+        });
       }
     } catch (error) {
       res.status(400).json({

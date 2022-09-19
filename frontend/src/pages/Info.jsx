@@ -6,30 +6,47 @@ import iconofacebook from "@assets/iconofacebook.png";
 import iconoinstagram from "@assets/iconoinstagram.png";
 import iconoyoutube from "@assets/iconoyoutube.png";
 import iconolinkedin from "@assets/iconolinkedin.png";
+import Swal from "sweetalert2";
 
 export default function Info() {
   const form = useRef();
-  console.warn(form.current);
+  const [contact, setContact] = useState([]);
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_contact",
-        "template_p39aa59",
+        "service_98zuy92",
+        "template_contact",
         form.current,
         "w0C6cHCwecKHHl9OB"
       )
       .then(
         (result) => {
           console.warn(result.text);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "¡Mensaje enviado!",
+            showConfirmButton: false,
+            timer: 2000,
+          });
         },
         (error) => {
           console.error(error.text);
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "¡Ups! hay un problema...",
+            showConfirmButton: false,
+            timer: 2000,
+          });
         }
       );
   };
-  const [contact, setContact] = useState([]);
   const handleChangeContact = (e) => {
     setContact({
       ...contact,
