@@ -2,6 +2,7 @@
 import Nav from "@components/Nav";
 import api from "@services/api";
 import { useEffect, useState } from "react";
+import repentecostes22footer from "@assets/repentecostes22footer.png";
 import "./playlist.css";
 
 export default function Playlist() {
@@ -28,6 +29,7 @@ export default function Playlist() {
             </a>
           ))}
         </section>
+        <img className="logofooter" src={repentecostes22footer} alt="logo" />
       </main>
     </div>
   );

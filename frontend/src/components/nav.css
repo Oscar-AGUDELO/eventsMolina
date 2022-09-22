@@ -63,7 +63,7 @@
   align-items: center;
   justify-content: start;
   font-family: integralCF;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border-top: 3px solid var(--color-light) !important;
 }
 #navContainer .navLinkBotton {

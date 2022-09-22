@@ -6,12 +6,8 @@ import repentecostes22footer from "@assets/repentecostes22footer.png";
 import Swal from "sweetalert2";
 
 export default function AdminLogin() {
-  const [dataReserva, setDataReserva] = useState({
-    name: "Admin",
-    lastname: "ADMIN07-X",
-    email: "admin@admin.com",
-    phone: "0123456789Admin",
-  });
+  const [dataReserva, setDataReserva] = useState({});
+  const [waiting, setWaiting] = useState(false);
   const handleReserva = (event) => {
     event.preventDefault();
     api
@@ -25,6 +21,7 @@ export default function AdminLogin() {
               "AdminPente",
               JSON.stringify(data.userAdmin07)
             );
+            setWaiting(!waiting);
             setTimeout(() => {
               window.location = "/admin-panel";
             }, 2000);
@@ -60,32 +57,32 @@ export default function AdminLogin() {
             type="text"
             name="name"
             onChange={handleChangeRegister}
-            // required
+            required
           />
           <p>APELLIDOS</p>
           <input
             type="text"
             name="lastname"
             onChange={handleChangeRegister}
-            // required
+            required
           />
           <p>EMAIL</p>
           <input
             type="text"
             name="email"
             onChange={handleChangeRegister}
-            // required
+            required
           />
           <p>TELÉFONO</p>
           <input
             type="text"
             name="phone"
             onChange={handleChangeRegister}
-            // required
+            required
           />
           <br />
           <input id="save" type="submit" value="ENVIAR" />
-          {dataReserva ? <p>Wait...</p> : ""}
+          {waiting ? <p>Wait...</p> : ""}
         </form>
         <img className="logofooter" src={repentecostes22footer} alt="logo" />
       </section>

@@ -1,11 +1,12 @@
 #infoContainer {
-  height: calc(100vh);
+  height: 100%;
   overflow: scroll;
+  animation: 2s opacityFrame;
 }
 
 #infoContainer .sectionsInfo {
-  height: calc(100vh - 3rem);
-  margin-top: 2rem;
+  height: calc(100vh - 6rem);
+  padding-top: 2rem;
 }
 
 #infoContainer .sectionsInfo p,
@@ -85,10 +86,11 @@
 
 #infoContainer #save {
   border: 2px solid var(--color-light);
-  padding: 0.6rem 0.6rem 0.7rem 0.6rem;
-  margin: 2rem 4rem;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  margin: 2rem 4rem 2rem 3.5rem;
   border-radius: 50px 100px;
   font-size: 1.2rem;
+  width: 8rem;
   font-family: integralCFBold;
 }
 

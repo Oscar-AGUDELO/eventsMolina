@@ -1,25 +1,20 @@
-#reservaContainer {
-  height: 100%;
-  width: 100vw;
+/* #reservaContainer {
+  height: 100vh;
   background-image: url("./../assets/Wall.jpg");
   background-size: cover;
-  position: absolute;
   background-repeat: repeat;
   z-index: 10;
-  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  animation: 2s opacityFrame;
 }
 
 #reservaContainer .ticketfondo {
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
+  width: 110%;
 }
 
 #reservaContainer .containContainerReserva {
-  height: 100vh;
   overflow: hidden;
   position: fixed;
   display: flex;
@@ -48,4 +43,79 @@
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
+} */
+
+#reservaContainer2 {
+  background-image: url("./../assets/Wall.jpg");
+
+  height: 100%;
+  width: 100vw;
+  background-size: cover;
+  position: absolute;
+  background-repeat: repeat;
+  z-index: -5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#reservaContainer2 .reservaContainer2a {
+  padding-top: 20px;
+  padding-bottom: 8px;
+  height: 856px;
+  background-size: cover;
+  width: 320px;
+  overflow: scroll;
+  animation: 2s opacityFrame;
+  padding-left: 16px;
+
+  scrollbar-width: 0px;
+}
+
+#reservaContainer2 .fond1 {
+  background-image: url("./../assets/1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 405px;
+  width: 288px;
+}
+#reservaContainer2 .fond2 {
+  background-image: url("./../assets/2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 194px;
+  background-position: 50% 50%;
+  width: 288px;
+  margin: 0;
+  margin-top: -108px;
+  padding-top: 61px;
+  text-align: left;
+  padding-left: 40px;
+}
+#reservaContainer2 .fond2 p {
+  font-family: GothamBold;
+  margin-bottom: 16px;
+  font-size: 12px;
+  width: 210px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#reservaContainer2 .fond3 {
+  background-position: 50% 50%;
+  background-image: url("./../assets/3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 257px;
+  width: 288px;
+  margin: 0;
+  margin-top: -41px;
+  padding-top: 61px;
+}
+
+#reservaContainer2 .fond3 img {
+  height: 130px;
+  color: springgreen;
 }

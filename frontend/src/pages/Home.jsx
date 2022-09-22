@@ -22,13 +22,25 @@ export default function Home() {
       <main className="sectionsHome">
         <section className="sectionHome1">
           <div className="iconsRs">
-            <a href="https://example.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/pentecostes.event/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img className="icono" src={iconoinstagram} alt="instagram" />
             </a>
-            <a href="https://example.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.youtube.com/channel/UCPjNqj821VcC8XhdlR2q9pA"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img className="icono" src={iconoyoutube} alt="iconoyoutube" />
             </a>
-            <a href="https://example.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/pentecostes.event/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img className="icono" src={iconofacebook} alt="iconofacebook" />
             </a>
           </div>
@@ -47,8 +59,14 @@ export default function Home() {
               src={iconoubicacion}
               alt="iconoubicacion"
             />
-            <p>Av. Valencia 36</p>
-            <p>30500 Molina de Segura, Murcia</p>
+            <a
+              href="https://goo.gl/maps/S1nxVw5HDABx5LBU9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p>Av. Valencia 36</p>
+              <p>30500 Molina de Segura, Murcia</p>
+            </a>
           </div>
           <div className="infoHome">
             <h2>FECHA</h2>
@@ -70,9 +88,12 @@ export default function Home() {
           <div className="infoHome">
             <p className="verso">
               Cuando llegó el día de Pentecostés, estaban todos unánimes juntos.
-              Y de repente vino del cielo un estruendo como de un viento recio
-              que soplaba, el cual llenó toda la casa donde estaban sentados.
-              Hecho 2:1-2
+              <br />
+              <br />Y fueron todos llenos del Espíritu Santo, y comenzaron a
+              hablar en otras lenguas, según el Espíritu les daba que hablasen.
+              <br />
+              <br />
+              Hechos 2
             </p>
           </div>
           <div className="infoHome invitamos">

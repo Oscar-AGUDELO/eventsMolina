@@ -2,10 +2,14 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  animation: 3s opacityFrame;
 }
 #start video {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 #start .logoStart {
   width: 100%;
   margin-top: -3rem;

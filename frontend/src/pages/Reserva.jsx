@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import api from "@services/api";
 import QRCode from "qrcode";
 import { useParams } from "react-router-dom";
-import ticketfondo from "@assets/2ticket.png";
 
 import "./reserva.css";
 
@@ -62,9 +61,35 @@ function Reserva() {
   }, [qrText]);
 
   return (
-    <div id="reservaContainer">
-      <img className="ticketfondo" src={ticketfondo} alt="ticketfondo" />
+    <div id="reservaContainer2">
+      <div className="reservaContainer2a">
+        <div className="fond1" />
+        <div className="fond2">
+          <p>
+            Nº Ticket:{" "}
+            {ticket.name
+              ? `
+            PENTE${ticket.id}Z${ticket.name.charAt(0)}${
+                  ticket.id
+                }${ticket.lastname.charAt(2)}`
+              : "Problem"}
+          </p>
+          <p>
+            Entradas:{" "}
+            {ticket.places === "ANULADA07" ? "ANULADA" : ticket.places}
+          </p>
+          <p>
+            Nombre: {ticket.name} {ticket.lastname}
+          </p>
+        </div>
+        <div className="fond3">
+          <img className="qrImage" src={qrImage} alt="qrImage" />
+        </div>
+      </div>
+
+      {/*  <div id="reservaContainer">
       <div className="containContainerReserva">
+        <img className="ticketfondo" src={ticketfondo} alt="ticketfondo" />
         <div className="textContainerReserva">
           <p>
             {ticket.name
@@ -81,6 +106,7 @@ function Reserva() {
         </div>
         <img className="qrImage" src={qrImage} alt="qrImage" />
       </div>
+    </div> */}
     </div>
   );
 }

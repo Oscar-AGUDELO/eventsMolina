@@ -4,8 +4,8 @@ import emailjs from "@emailjs/browser";
 import "./info.css";
 import iconofacebook from "@assets/iconofacebook.png";
 import iconoinstagram from "@assets/iconoinstagram.png";
-import iconoyoutube from "@assets/iconoyoutube.png";
 import iconolinkedin from "@assets/iconolinkedin.png";
+import repentecostes22footer from "@assets/repentecostes22footer.png";
 import Swal from "sweetalert2";
 
 export default function Info() {
@@ -57,6 +57,24 @@ export default function Info() {
     <div id="infoContainer">
       <Nav />
       <main className="sectionsInfo">
+        <h3>
+          SI TIENES ALGUNA PREGUNTA O SUGERENCIA, NO DUDES EN PONERTE EN
+          CONTACTO CON NOSOTROS
+        </h3>
+        <form className="contactForm" onSubmit={sendEmail} ref={form}>
+          <p>Nombre</p>
+          <input type="text" name="name" onChange={handleChangeContact} />
+          <p>Email</p>
+          <input
+            type="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            name="email"
+            onChange={handleChangeContact}
+          />
+          <p>Mensaje</p>
+          <textarea type="text" name="message" onChange={handleChangeContact} />
+          <input id="save" type="submit" value="Enviar" />
+        </form>
         <h2>ORGANIZADOR</h2>
         <strong>Apostólicos Molina de Segura</strong>
         <div className="iconsRs">
@@ -66,13 +84,6 @@ export default function Info() {
             rel="noreferrer"
           >
             <img className="icono" src={iconoinstagram} alt="instagram" />
-          </a>
-          <a
-            href="https://www.youtube.com/apostolicosmolina/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img className="icono" src={iconoyoutube} alt="iconoyoutube" />
           </a>
           <a
             href="https://www.facebook.com/ApostolicosMolina"
@@ -90,7 +101,7 @@ export default function Info() {
             rel="noreferrer"
           >
             <img className="icono" src={iconolinkedin} alt="iconolinkedin" />
-            <p>Oscar Agudelo - Desarrollador Web</p>
+            <p>Oscar Agudelo - Desarrollador</p>
           </a>
           <a
             href="https://www.instagram.com/cita.diaria/"
@@ -109,19 +120,7 @@ export default function Info() {
             <p>Televisión Cristiana - TVC</p>
           </a>
         </div>
-        <h3>
-          SI TIENES ALGUNA PREGUNTA O SUGERENCIA, NO DUDES EN PONERTE EN
-          CONTACTO CON NOSOTROS
-        </h3>
-        <form className="contactForm" onSubmit={sendEmail} ref={form}>
-          <p>Nombre</p>
-          <input type="text" name="name" onChange={handleChangeContact} />
-          <p>Email</p>
-          <input type="text" name="email" onChange={handleChangeContact} />
-          <p>Mensaje</p>
-          <textarea type="text" name="message" onChange={handleChangeContact} />
-          <input id="save" type="submit" value="Enviar" />
-        </form>
+        <img className="logofooter" src={repentecostes22footer} alt="logo" />
       </main>
     </div>
   );

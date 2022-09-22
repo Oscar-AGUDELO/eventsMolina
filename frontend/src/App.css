@@ -49,6 +49,15 @@ button:hover {
   src: url("./assets/fonts/phonk-free-demo/phonk-free-demo.otf")
     format("truetype");
 }
+
+@keyframes opacityFrame {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 #App .sectionfond {
   height: 100%;
   width: 100vw;
@@ -57,6 +66,7 @@ button:hover {
   position: absolute;
   background-repeat: repeat;
   z-index: -10;
+  animation: 2s opacityFrame;
 }
 /* 
 #App .imgHome {

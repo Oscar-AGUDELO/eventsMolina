@@ -1,10 +1,11 @@
 #homeContainer {
-  height: calc(100vh);
+  height: 100%;
   overflow: scroll;
+  animation: 2s opacityFrame;
 }
 
 #homeContainer .sectionsHome {
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 6rem);
   color: rgba(17, 17, 17, 0.678);
 }
 
@@ -62,6 +63,7 @@
 }
 #homeContainer .iconoubicacion {
   margin-top: -0.7rem;
+  margin-bottom: 0.6rem;
   height: 4rem;
   width: 2rem;
   object-fit: cover;
@@ -72,7 +74,8 @@
 }
 #homeContainer .iconoabiblie {
   height: 1.5rem;
-  margin-bottom: 0.2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.6rem;
   object-fit: cover;
 }
 #homeContainer .infoHome .verso {

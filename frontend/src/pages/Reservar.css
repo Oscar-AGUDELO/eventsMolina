@@ -1,5 +1,7 @@
 #reservarContainer {
-  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  animation: 2s opacityFrame;
 }
 
 #reservarContainer .ProfileForm {
@@ -16,7 +18,7 @@
 }
 
 #reservarContainer .sectionReservar {
-  height: 35%;
+  height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,5 +50,36 @@
 }
 .logofooter {
   width: 65%;
-  margin-bottom: 1rem;
+  padding-bottom: 3rem;
+}
+#infoReservar .precio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#infoReservar .precio h2 {
+  border-bottom: 2px solid var(--color-light);
+  font-size: 1rem;
+}
+#infoReservar b {
+  font-size: 0.6rem;
+}
+#infoReservar p {
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+}
+#infoReservar span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: integralCFBold;
+}
+#infoReservar .cupos {
+  padding: 0.4rem;
+  background-color: rgb(187, 25, 25);
+}
+#infoReservar .merche {
+  margin: 1rem auto;
+  height: 12rem;
 }
