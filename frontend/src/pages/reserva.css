@@ -48,12 +48,10 @@
 #reservaContainer2 {
   background-image: url("./../assets/Wall.jpg");
 
-  height: 100%;
+  height: calc(100vh + 5rem);
   width: 100vw;
   background-size: cover;
-  position: absolute;
   background-repeat: repeat;
-  z-index: -5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,11 +64,9 @@
   height: 856px;
   background-size: cover;
   width: 320px;
-  overflow: scroll;
   animation: 2s opacityFrame;
   padding-left: 16px;
-
-  scrollbar-width: 0px;
+  overflow: hidden;
 }
 
 #reservaContainer2 .fond1 {
@@ -80,6 +76,7 @@
   margin: 0;
   height: 405px;
   width: 288px;
+  overflow: hidden;
 }
 #reservaContainer2 .fond2 {
   background-image: url("./../assets/2.png");
@@ -93,6 +90,7 @@
   padding-top: 61px;
   text-align: left;
   padding-left: 40px;
+  overflow: hidden;
 }
 #reservaContainer2 .fond2 p {
   font-family: GothamBold;
@@ -113,9 +111,11 @@
   margin: 0;
   margin-top: -41px;
   padding-top: 61px;
+  overflow: hidden;
 }
 
 #reservaContainer2 .fond3 img {
   height: 130px;
   color: springgreen;
+  overflow: hidden;
 }
