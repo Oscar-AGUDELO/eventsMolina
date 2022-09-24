@@ -44,7 +44,6 @@ export default function AdminLogin() {
       .then((res) => res.data)
       .then(
         (data) => {
-          console.warn(data);
           if (data.userAdmin07 === "AdminIsHere") {
             localStorage.setItem(
               "AdminPente",

@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `eventsMolina`.`users` (
 --
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NOW(),"Admin","ADMIN07-X","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0), (2,NOW(),"Oscar","AGUDELO","oscar@test.com","0636172130",NULL,0,NULL,0,"ANULADA07");
+INSERT INTO `users` VALUES (1,NOW(),"Admin","ADMIN07-X","admin@admin.com","0123456789Admin",NULL,0,NULL,0,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 -- -----------------------------------------------------
