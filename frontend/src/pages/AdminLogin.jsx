@@ -4,10 +4,39 @@ import { useState } from "react";
 import "./Reservar.css";
 import repentecostes22footer from "@assets/repentecostes22footer.png";
 import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
 
 export default function AdminLogin() {
   const [dataReserva, setDataReserva] = useState({});
   const [waiting, setWaiting] = useState(false);
+
+  const sendEmail = () => {
+    emailjs
+      .send(
+        "service_contact",
+        "template_alerta",
+        { text: "Alguien se ha conectado al admin" },
+        "K_Pr45Bpob2jbHe-a"
+      )
+      .then(
+        (result) => {
+          console.warn(result.text);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "¡Mensaje enviado!",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        },
+        (error) => {
+          console.error(error.text);
+        }
+      );
+  };
   const handleReserva = (event) => {
     event.preventDefault();
     api
@@ -21,6 +50,7 @@ export default function AdminLogin() {
               "AdminPente",
               JSON.stringify(data.userAdmin07)
             );
+            sendEmail();
             setWaiting(!waiting);
             setTimeout(() => {
               window.location = "/admin-panel";

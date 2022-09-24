@@ -82,7 +82,7 @@ export default function Reservar() {
         <div id="infoReservar">
           <div className="infoHome precio">
             <h2>
-              PRE-VENTA <b>(22/09/22-25/10/22)</b>
+              PREVENTA <b>(22/09/22-25/10/22)</b>
             </h2>
             <p>10 EUR de 5 años en adelante</p>
           </div>
@@ -90,7 +90,7 @@ export default function Reservar() {
           <br />
           <div className="infoHome precio">
             <h2>
-              VENTA NORMAL <b>(26/10/22-25/11/22)</b>
+              TARIFA ESTÁNDAR <b>(26/10/22-25/11/22)</b>
             </h2>
             <p>13 EUR de 5 años en adelante</p>
             <br />

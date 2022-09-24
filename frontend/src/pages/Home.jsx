@@ -46,8 +46,9 @@ export default function Home() {
           </div>
           <img className="logoHome" src={repentecostes22} alt="logo" />
           <p className="descriptionHome">
-            Pentecostés es un espacio musical de exaltación junto a muchos
-            jóvenes donde podrás tener un encuentro de impacto con Dios
+            Pentecostés es un espacio musical de adoración y exaltación en el
+            que podrás disfrutar junto a muchos jóvenes de un encuentro con Dios
+            que marcará tu vida.
           </p>
           <div className="infoHome">
             <h2>UBICACIÓN</h2>
@@ -98,7 +99,7 @@ export default function Home() {
           </div>
           <div className="infoHome invitamos">
             <h2 className="invitamos">
-              TE INVITAMOS A QUE NO TE PIERDAS LA FIESTA MÁS ESPERADA DEL AÑO
+              ¡NO TE PIERDAS LA FIESTA MÁS ESPERADA DEL AÑO!
             </h2>
           </div>
           <button

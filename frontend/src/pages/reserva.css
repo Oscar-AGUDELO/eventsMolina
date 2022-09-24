@@ -48,7 +48,7 @@
 #reservaContainer2 {
   background-image: url("./../assets/Wall.jpg");
 
-  height: calc(100vh + 5rem);
+  height: calc(100vh + 10rem);
   width: 100vw;
   background-size: cover;
   background-repeat: repeat;

@@ -16,10 +16,10 @@ export default function Info() {
 
     emailjs
       .sendForm(
-        "service_98zuy92",
+        "service_contact",
         "template_contact",
         form.current,
-        "w0C6cHCwecKHHl9OB"
+        "K_Pr45Bpob2jbHe-a"
       )
       .then(
         (result) => {

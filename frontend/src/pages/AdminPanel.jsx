@@ -128,7 +128,11 @@ export default function AdminPanel() {
   };
   if (userIsConnected === "AdminIsHere") {
     return (
-      <div id="eventsContainer">
+      <div
+        style={{
+          background: "black",
+        }}
+      >
         <Nav />
         <button type="button" onClick={goOut}>
           Desconexión
@@ -138,7 +142,7 @@ export default function AdminPanel() {
             className="sectionEvents1"
             style={{
               width: "100vw",
-              overflow: "scroll",
+              background: "black",
             }}
           >
             <div
@@ -155,7 +159,8 @@ export default function AdminPanel() {
                 style={{
                   margin: "1rem",
                   border: "3px #ffffff solid",
-                  backgroundColor: "rgba(0, 0, 0, 0.616)",
+                  background: "black",
+                  width: "100vw",
                 }}
               >
                 <thead>
