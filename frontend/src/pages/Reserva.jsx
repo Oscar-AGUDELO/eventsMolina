@@ -57,7 +57,7 @@ function Reserva() {
           setQrImage(trasnData);
         });
       })
-      .catch("erreur");
+      .catch("error");
   }, [qrText]);
 
   return (
