@@ -12,5 +12,5 @@ if (typeof PhusionPassenger !== "undefined") {
   app.listen("passenger");
 } else {
   app.listen(PORT);
-  console.warn(`server listen on port : ${PORT}`);
+  console.warn(`server listen on port: ${PORT}`);
 }

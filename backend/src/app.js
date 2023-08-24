@@ -10,11 +10,10 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://pentecostes.org",
-      "http://www.pentecostes.org",
-      "https://pentecostes.org",
-      "https://www.pentecostes.org",
-      "http://localhost:3000",
+      "http://pentecostes.oscardev.fr",
+      "http://www.pentecostes.oscardev.fr",
+      "https://pentecostes.oscardev.fr",
+      "https://www.pentecostes.oscardev.fr",
     ],
     credentials: true,
     optionsSuccessStatus: 200,
@@ -29,20 +28,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 
 // Serve REACT APP
-app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 // API routes
 app.use("/api", router);
 
 // Redirect all requests to the REACT app
-const reactIndexFile = path.join(
-  __dirname,
-  "..",
-  "..",
-  "frontend",
-  "dist",
-  "index.html"
-);
+const reactIndexFile = path.join(__dirname, "../public", "index.html");
 
 if (fs.existsSync(reactIndexFile)) {
   app.get("*", (req, res) => {
